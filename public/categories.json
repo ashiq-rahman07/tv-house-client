@@ -1,0 +1,25 @@
+[
+    {
+        "_id": "63813397878d1f15aa0c4133",
+       "category_name": "Closed Back Headphones",
+       "category_img": "https://i.ibb.co/j6hqc1m/Closed-Back-Headphones.jpg"
+       
+    },
+    {
+        "_id": "63813397878d1f15aa0c4",
+        "category_name": "Bone Conduction Headphones",
+        "category_img": "https://i.ibb.co/2vG4QXt/Bone-Conduction-Headphones.jpg"
+    },
+    {
+        "_id": "63813397878d1f15aa0c44567",
+        "category_name": "Classic Earphones",
+        "category_img": "https://i.ibb.co/3sxwZZf/clasic-headphone.jpg"
+    },
+    {
+        "_id": "63813397878d1f15aa0c448906",
+        "category_name": "Wireless Earbuds",
+        "category_img": "https://i.ibb.co/qjL08Xz/airbird.jpg"
+    }
+
+   
+]
