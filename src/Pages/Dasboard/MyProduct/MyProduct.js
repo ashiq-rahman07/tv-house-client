@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import Loading from '../../Shared/Loading/Loading';
+import ProductCard from './ProductCard';
 
 
 
@@ -18,24 +19,17 @@ if(isLoading){
 }else{
     console.log(products)
 }
-    // const { data: products, isLoading, refetch } = useQuery({
-    //     queryKey: ['products'],
-    //     queryFn: async () => {
-    //         try {
-    //             const res = await fetch(`http://localhost:5000/products/user/${user?.email}`);
-    //             const data = await res.json();
-    //             console.log(products)
-    //             return data;
-    //         }
-    //         catch (error) {
-    //             console.log(error)
-    //         }
-    //     }
-    // });
+    
  
     return (
         <div>
             <p>My Product:{products.length} </p>
+            <div className='grid lg:grid-cols-2 gap-4 '>
+                {
+                    products.map(product => <ProductCard key={product._id} product={product}></ProductCard>)
+                }
+            </div>
+           
         </div>
     );
 };
