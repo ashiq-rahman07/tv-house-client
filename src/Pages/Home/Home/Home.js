@@ -4,7 +4,7 @@ import Categories from '../Category/Categories';
 
 const Home = () => {
     return (
-        <div>
+        <div className='max-w-max mx-auto'>
            
             <Banner></Banner>
             <Categories></Categories>
