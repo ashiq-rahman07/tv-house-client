@@ -6,17 +6,20 @@ const ProductCard = ({ product }) => {
         mobile } = product;
 
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-4/5 bg-gray-200 shadow-xl">
             <figure><img src={product_img} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
-                    Shoes!
-                    <div className="badge badge-secondary">NEW</div>
+                   {product_name}
+                    <div className="badge badge-secondary">{condition_type}</div>
                 </h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <p>{description}</p>
+                <p>Price: {resale_price}</p>
+                <p>{years_use} years of use</p>
+                <p className='badge badge-outline'>Mobaile No: {mobile}</p>
                 <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
+                    <div className=" btn btn-outline">Delete Product</div>
+                    <div className=" btn btn-outline">Available</div>
                 </div>
             </div>
         </div>
