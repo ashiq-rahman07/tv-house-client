@@ -5,7 +5,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 
 
 const BookingModal = ({ refetch, bookedProduct, setBookedProduct }) => {
-    const { product_name, resale_price } = bookedProduct
+    const { product_name, product_img, resale_price } = bookedProduct
 
     const { user } = useContext(AuthContext);
 
@@ -21,12 +21,12 @@ const BookingModal = ({ refetch, bookedProduct, setBookedProduct }) => {
         // [3, 4, 5].map((value, i) => console.log(value))
         const booking = {
             name,
-            email:user?.email,
+            email: user?.email,
             product_name,
             resale_price,
             phone,
-            meetingLocation
-
+            meetingLocation,
+            product_img
 
         }
         console.log(booking)
@@ -44,7 +44,7 @@ const BookingModal = ({ refetch, bookedProduct, setBookedProduct }) => {
             .then(data => {
                 console.log(data);
                 if (data.acknowledged) {
-                    // setTreatment(null);
+                    setBookedProduct(null)
                     toast.success('Booking confirmed');
                     refetch();
                 }
@@ -65,7 +65,7 @@ const BookingModal = ({ refetch, bookedProduct, setBookedProduct }) => {
                     <h3 className="text-lg font-bold">{product_name}</h3>
                     <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 mt-10'>
 
-                        <input name="name" type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered" />
+                        <input name="name" type="text" defaultValue={user?.displayName} placeholder="Your Name" className="input w-full input-bordered" />
                         <input name="email" type="email" defaultValue={user?.email} disabled placeholder="Email Address" className="input w-full input-bordered" />
 
                         <input name="email" type="email" defaultValue={product_name} disabled placeholder="Email Address" className="input w-full input-bordered" />
