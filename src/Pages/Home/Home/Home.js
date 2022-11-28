@@ -1,13 +1,15 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
 import Categories from '../Category/Categories';
+import Cards from './Cards';
 
 const Home = () => {
     return (
-        <div className='max-w-max mx-auto'>
+        <div className=''>
            
             <Banner></Banner>
             <Categories></Categories>
+            <Cards></Cards>
         </div>
     );
 };
