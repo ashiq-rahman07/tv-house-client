@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
+import Fpage from "../../Pages/404page/Fpage";
+import Blog from "../../Pages/Blog/Blog";
 import AddProduct from "../../Pages/Dasboard/AddProduct/AddProduct";
 import AllBuyer from "../../Pages/Dasboard/AllBuyer/AllBuyer";
 import AllSeller from "../../Pages/Dasboard/AllSeller/AllSeller";
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
         ]
     },
@@ -67,7 +73,12 @@ const router = createBrowserRouter([
              
             }
         ]
+    },
+    {
+        path:'/*',
+        element:<Fpage></Fpage>
     }
+
 ])
 
 export default router;
