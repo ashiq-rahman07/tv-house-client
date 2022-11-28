@@ -42,7 +42,7 @@ const DashboardLayout = () => {
                         }
                         {
                             isByuer && <>
-                                <li><Link to="/dashboard/myorders">My Product</Link></li>
+                                <li><Link to="/dashboard/myorders">Booked Product</Link></li>
                             </>
                         }
 
