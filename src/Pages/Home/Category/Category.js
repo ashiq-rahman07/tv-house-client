@@ -14,7 +14,7 @@ const Category = ({ category }) => {
                 <h2 className="card-title">{category_name}</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
                 <div className="card-actions">
-                    <Link to={`/products/${category_name}`}><button className="btn btn-primary">Buy Now</button></Link>   
+                    <Link to={`/products/${category_name}`}><button className="btn btn-primary">See Products</button></Link>   
                 </div>
             </div>
         </div>
