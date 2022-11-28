@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const OrderCard = ({ order }) => {
     const { product_img,resale_price,product_name } = order
@@ -12,8 +13,7 @@ const OrderCard = ({ order }) => {
                 </h2>
                 
                 <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
+                    <Link><button className='btn btn-primary'>Pay</button></Link>
                 </div>
             </div>
         </div>

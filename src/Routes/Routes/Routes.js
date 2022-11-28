@@ -8,6 +8,7 @@ import AllUser from "../../Pages/Dasboard/AllUser/AllUser";
 import MyBooking from "../../Pages/Dasboard/MyBooking/MyBooking";
 import MyOrders from "../../Pages/Dasboard/MyOrders/MyOrders";
 import MyProduct from "../../Pages/Dasboard/MyProduct/MyProduct";
+import Payment from "../../Pages/Dasboard/Payment/Payment";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Products from "../../Pages/Products/Products";
@@ -21,52 +22,48 @@ const router = createBrowserRouter([
         element: <Main></Main>,
         children: [
             {
-                path:'/',
+                path: '/',
                 element: <Home></Home>
             },
             {
-                path:'/products/:category_name',
+                path: '/products/:category_name',
                 element: <PrivateRoute><Products></Products></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/products/${params.category_name}`)
             },
             {
-                path:'/signup',
-                element:<SignUp></SignUp>
+                path: '/signup',
+                element: <SignUp></SignUp>
             },
             {
-                path:'/login',
-                element:<Login></Login>
+                path: '/login',
+                element: <Login></Login>
             }
         ]
     },
     {
-        path:'/dashboard',
-        element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
-        children:[
+        path: '/dashboard',
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        children: [
             {
-                path:'/dashboard/myorders',
-                element:<MyOrders></MyOrders>
+                path: '/dashboard/myorders',
+                element: <MyOrders></MyOrders>
             },
             {
-                path:'/dashboard/myproduct',
-                element:<MyProduct></MyProduct>
+                path: '/dashboard/myproduct',
+                element: <MyProduct></MyProduct>
             },
             {
-                path:'/dashboard/addproduct',
-                element:<AddProduct></AddProduct>
+                path: '/dashboard/addproduct',
+                element: <AddProduct></AddProduct>
             },
             {
                 path: '/dashboard/alluser',
                 element: <AdminRoute><AllUser></AllUser></AdminRoute>
-                
+
             },
             {
-                path:'/dashboard/allseller',
-                element:<AdminRoute><AllSeller></AllSeller></AdminRoute>
-            },
-            {
-                path: '/dashboard/allBuyer',
-                element: <AdminRoute><AllBuyer></AllBuyer></AdminRoute>
+                path:'/dashboard/payment/:id',
+                element:<Payment></Payment>
             }
         ]
     }
