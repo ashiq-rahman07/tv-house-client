@@ -24,7 +24,7 @@ const MyOrders = () => {
     return (
         <div>
             <p>my booking {bookings.length}</p>
-            <div>
+            <div className='grid md:grid-cols-3 gap-4 pl-20 md:pl-0'>
                 {
                     bookings?.map(order=><OrderCard key={order._id} order={order}></OrderCard>)
                 }
