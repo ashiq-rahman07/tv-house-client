@@ -11,9 +11,32 @@ const MyProduct = () => {
     const { user } = useContext(AuthContext);
     const {data:products = [],isLoading} = useQuery({
         queryKey: ['products'],
-        queryFn:()=> fetch(`http://localhost:5000/products/user/${user?.email}`)
-        .then(res=> res.json())
-    })
+        queryFn:async ()=> {
+            try{
+                const res = await fetch(`http://localhost:5000/products/user/${user?.email}`,{
+                    headers: {
+                        authorization: `bearer ${localStorage.getItem('accessToken')}`
+                    }
+                })
+                const data = await res.json();
+                return data;
+            }
+            catch (error) {
+
+            }
+
+        }
+        
+        
+        
+        
+        
+        
+        
+    //     fetch(`http://localhost:5000/products/user/${user?.email}`,)
+    //     .then(res=> res.json())
+    //
+ })
 if(isLoading){
     return <Loading></Loading>
 }else{
