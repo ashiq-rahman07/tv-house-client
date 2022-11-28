@@ -2,12 +2,16 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
 import AddProduct from "../../Pages/Dasboard/AddProduct/AddProduct";
+import AllBuyer from "../../Pages/Dasboard/AllBuyer/AllBuyer";
+import AllSeller from "../../Pages/Dasboard/AllSeller/AllSeller";
 import MyBooking from "../../Pages/Dasboard/MyBooking/MyBooking";
+import MyOrders from "../../Pages/Dasboard/MyOrders/MyOrders";
 import MyProduct from "../../Pages/Dasboard/MyProduct/MyProduct";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Products from "../../Pages/Products/Products";
 import SignUp from "../../Pages/SignUp/SignUp";
+import AdminRoute from "../AdminRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
@@ -39,8 +43,8 @@ const router = createBrowserRouter([
         element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children:[
             {
-                path:'/dashboard',
-                element:<MyBooking></MyBooking>
+                path:'/dashboard/myorders',
+                element:<MyOrders></MyOrders>
             },
             {
                 path:'/dashboard/myproduct',
@@ -49,6 +53,14 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/addproduct',
                 element:<AddProduct></AddProduct>
+            },
+            {
+                path:'/dashboard/allseller',
+                element:<AdminRoute><AllSeller></AllSeller></AdminRoute>
+            },
+            {
+                path: '/dashboard/allBuyer',
+                element: <AdminRoute><AllBuyer></AllBuyer></AdminRoute>
             }
         ]
     }
