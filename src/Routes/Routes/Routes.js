@@ -4,6 +4,7 @@ import Main from "../../Layout/Main";
 import AddProduct from "../../Pages/Dasboard/AddProduct/AddProduct";
 import AllBuyer from "../../Pages/Dasboard/AllBuyer/AllBuyer";
 import AllSeller from "../../Pages/Dasboard/AllSeller/AllSeller";
+import AllUser from "../../Pages/Dasboard/AllUser/AllUser";
 import MyBooking from "../../Pages/Dasboard/MyBooking/MyBooking";
 import MyOrders from "../../Pages/Dasboard/MyOrders/MyOrders";
 import MyProduct from "../../Pages/Dasboard/MyProduct/MyProduct";
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/addproduct',
                 element:<AddProduct></AddProduct>
+            },
+            {
+                path: '/dashboard/alluser',
+                element: <AdminRoute><AllUser></AllUser></AdminRoute>,
+                loader: () => fetch('http://localhost:5000/users')
             },
             {
                 path:'/dashboard/allseller',
