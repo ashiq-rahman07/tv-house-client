@@ -57,8 +57,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/alluser',
-                element: <AdminRoute><AllUser></AllUser></AdminRoute>,
-                loader: () => fetch('http://localhost:5000/users')
+                element: <AdminRoute><AllUser></AllUser></AdminRoute>
+                
             },
             {
                 path:'/dashboard/allseller',
